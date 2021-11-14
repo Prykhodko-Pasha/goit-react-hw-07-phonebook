@@ -1,29 +1,8 @@
 {
   "contacts": [
-    {
-      "id": "id-2",
-      "name": "Hermione Kline",
-      "number": "443-89-12"
-    },
-    {
-      "id": "id-3",
-      "name": "Eden Clements",
-      "number": "645-17-79"
-    },
-    {
-      "id": "id-4",
-      "name": "Annie Copeland",
-      "number": "227-91-26"
-    },
-    {
-      "name": "Rosie Simpson",
-      "number": "+555555555",
-      "id": "83aab0da-e829-46ba-b805-9d9562fc2f58"
-    },
-    {
-      "name": "Pavlo Prykhodko",
-      "number": "+565656565",
-      "id": "eaf357aa-8e96-4833-b5b8-3326386ed0a8"
-    }
+    { "id": "id-1", "name": "Rosie Simpson", "number": "459-12-56" },
+    { "id": "id-2", "name": "Hermione Kline", "number": "443-89-12" },
+    { "id": "id-3", "name": "Eden Clements", "number": "645-17-79" },
+    { "id": "id-4", "name": "Annie Copeland", "number": "227-91-26" }
   ]
 }
