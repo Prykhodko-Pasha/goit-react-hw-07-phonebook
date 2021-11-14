@@ -6,7 +6,7 @@ import {
 } from '../services/contacts-api';
 
 export const fetchContacts = () => async dispatch => {
-  dispatch(actions.fetchContactsRequest);
+  dispatch(actions.fetchContactsRequest());
 
   try {
     const contacts = await fetchContactsAPI();
@@ -17,7 +17,7 @@ export const fetchContacts = () => async dispatch => {
 };
 
 export const addContact = (name, number) => async dispatch => {
-  dispatch(actions.addContactRequest);
+  dispatch(actions.addContactRequest());
 
   try {
     const contact = await addContactAPI(name, number);
@@ -27,7 +27,7 @@ export const addContact = (name, number) => async dispatch => {
   }
 };
 export const delContact = id => async dispatch => {
-  dispatch(actions.fetchContactsRequest);
+  dispatch(actions.delContactRequest());
 
   try {
     const contactId = await delContactAPI(id);

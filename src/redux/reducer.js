@@ -14,12 +14,6 @@ const isLoading = createReducer(false, {
   [actions.fetchContactsRequest]: () => true,
   [actions.fetchContactsSuccess]: () => false,
   [actions.fetchContactsError]: () => false,
-  [actions.addContactRequest]: () => true,
-  [actions.addContactSuccess]: () => false,
-  [actions.addContactError]: () => false,
-  [actions.delContactRequest]: () => true,
-  [actions.delContactSuccess]: () => false,
-  [actions.delContactError]: () => false,
 });
 
 const filter = createReducer('', {
@@ -41,24 +35,3 @@ export default combineReducers({
   filter,
   error,
 });
-// const initialState = {
-//   items: [],
-//   isLoading: false,
-//   filter: '',
-// };
-
-// const reducers = createReducer(initialState, {
-//   [actions.addContact]: (state, { payload }) => {
-//     return { ...state, items: [...state.items, payload] };
-//   },
-//   [actions.delContact]: (state, { payload }) => {
-//     const newContactsArr = state.items.filter(item => item.id !== payload);
-//     return { ...state, items: newContactsArr };
-//   },
-//   [actions.searchContact]: (state, { payload }) => ({
-//     ...state,
-//     filter: payload,
-//   }),
-// });
-
-// export default reducers;

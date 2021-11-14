@@ -26,12 +26,4 @@ ContactsItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-  // onDelContact: PropTypes.func.isRequired,
 };
-
-//======= vinilla redux =======
-// const mapDispatchToProps = dispatch => ({
-//   onDelContact: id => dispatch(actions.delContact(id)),
-// });
-
-// export default connect(null, mapDispatchToProps)(ContactsItem);

@@ -77,16 +77,3 @@ export default function Form() {
     </form>
   );
 }
-
-//======= vinilla redux =======
-// const mapStateToProps = state => {
-//   return {
-//     items: state.contacts.items,
-//   };
-// };
-
-// const mapDispatchToProps = dispatch => ({
-//   onAddContact: (name, number) => dispatch(actions.addContact(name, number)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Form);
