@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import s from '../Contacts/Contacts.module.css';
 import * as operations from '../../redux/operations';
 
-export default function ContactsItem({ id, name, number }) {
+export default function ContactsItem({ id, name, phone }) {
   const dispatch = useDispatch();
 
   return (
     <>
       <p>
-        {name}: {number}
+        {name}: {phone}
       </p>
       <button
         className={s.del__btn}
@@ -25,5 +25,5 @@ export default function ContactsItem({ id, name, number }) {
 ContactsItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
 };

@@ -8,9 +8,9 @@ export default function Contacts() {
 
   return (
     <ul className={s.contacts__list}>
-      {contacts.map(({ id, name, number }) => (
+      {contacts.map(({ id, name, phone }) => (
         <li key={id} className={s.contacts__item}>
-          <ContactsItem id={id} name={name} number={number} />
+          <ContactsItem id={id} name={name} phone={phone} />
         </li>
       ))}
     </ul>

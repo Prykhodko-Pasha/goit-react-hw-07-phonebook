@@ -6,7 +6,7 @@ import { getEntities } from '../../redux/selectors';
 
 export default function Form() {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const items = useSelector(getEntities);
   const dispatch = useDispatch();
 
@@ -16,8 +16,8 @@ export default function Form() {
       case 'name':
         setName(value);
         break;
-      case 'number':
-        setNumber(value);
+      case 'phone':
+        setPhone(value);
         break;
       default:
         return;
@@ -30,7 +30,7 @@ export default function Form() {
       item => item.name.toLowerCase() === name.toLowerCase(),
     );
     if (isContactExist.length === 0) {
-      dispatch(operations.addContact(name, number));
+      dispatch(operations.addContact(name, phone));
     } else {
       alert(`${name} is already in contacts.`);
     }
@@ -40,7 +40,7 @@ export default function Form() {
 
   const reset = () => {
     setName('');
-    setNumber('');
+    setPhone('');
   };
 
   return (
@@ -61,9 +61,9 @@ export default function Form() {
       <label>
         <input
           type="tel"
-          name="number"
+          name="phone"
           placeholder="Number"
-          value={number}
+          value={phone}
           onChange={onChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
