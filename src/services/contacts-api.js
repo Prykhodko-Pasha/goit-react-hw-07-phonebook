@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 axios.defaults.baseURL =
   'https://6191a09a41928b00176900d3.mockapi.io/phonebook';
@@ -11,7 +11,8 @@ export async function fetchContactsAPI() {
 }
 
 export async function addContactAPI(name, phone) {
-  const newContact = { name, phone, id: uuidv4() };
+  // const newContact = { name, phone, id: uuidv4() };
+  const newContact = { name, phone };
   const { data } = await axios.post('/contacts', newContact);
   return data;
 }

@@ -30,7 +30,7 @@ export default function Form() {
       item => item.name.toLowerCase() === name.toLowerCase(),
     );
     if (isContactExist.length === 0) {
-      dispatch(operations.addContact(name, phone));
+      dispatch(operations.addContact({ name, phone }));
     } else {
       alert(`${name} is already in contacts.`);
     }

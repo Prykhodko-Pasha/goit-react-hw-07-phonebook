@@ -7,39 +7,24 @@ import {
 } from '../services/contacts-api';
 
 export const fetchContacts = createAsyncThunk(
-  actions.fetchContactsRequest,
+  actions.fetchContacts,
   async () => {
     const contacts = await fetchContactsAPI();
     return contacts;
   },
 );
-export const addContact = createAsyncThunk(
-  actions.addContactSuccess,
-  async data => {
-    const { name, phone } = data;
-    console.log(name);
-    console.log(phone);
-    const contact = await addContactAPI(name, phone);
-    console.log(contact);
-    return contact;
-  },
-);
-// export const addContact = createAsyncThunk(
-//   actions.addContactRequest,
-//   async (name, phone) => {
-//     try {
-//       const contact = await addContactAPI(name, phone);
-//       console.log(contact);
-//       return contact; // dispatch(actions.addContactSuccess(contact));
-//     } catch (error) {
-//       return actions.addContactError(error);
-//     }
+export const addContact = createAsyncThunk(actions.addContact, async data => {
+  const { name, phone } = data;
+  const contact = await addContactAPI(name, phone);
+  console.log(contact);
+  return contact;
+});
+export const delContact = createAsyncThunk(actions.delContact, async id => {
+  const contact = await delContactAPI(id);
+  return contact;
+});
 
-//     // const contact = await addContactAPI(name, phone);
-//     // return contact;
-//   },
-// );
-
+// ========== oldschool ==========
 // export const fetchContacts = () => async dispatch => {
 //   dispatch(actions.fetchContactsRequest());
 
@@ -62,13 +47,13 @@ export const addContact = createAsyncThunk(
 //   }
 // };
 
-export const delContact = id => async dispatch => {
-  dispatch(actions.delContactRequest());
+// export const delContact = id => async dispatch => {
+//   dispatch(actions.delContactRequest());
 
-  try {
-    const contactId = await delContactAPI(id);
-    dispatch(actions.delContactSuccess(contactId));
-  } catch (error) {
-    dispatch(actions.delContactError(error));
-  }
-};
+//   try {
+//     const contactId = await delContactAPI(id);
+//     dispatch(actions.delContactSuccess(contactId));
+//   } catch (error) {
+//     dispatch(actions.delContactError(error));
+//   }
+// };
